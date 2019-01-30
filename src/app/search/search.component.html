@@ -1,0 +1,62 @@
+<div class="layout-max-width">
+  <div class="wrapper">
+
+    <div class="search-form">
+      <mat-card>
+        <mat-form-field class="full-width">
+          <input [(ngModel)]="destination"
+                 name="destination"
+                 matInput
+                 placeholder="Where to go?">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-select [(ngModel)]="traveller"
+                      name="traveller"
+                      matNativeControl
+                      placeholder="What is your main interest?">
+            <mat-option value="adventures">Adventures</mat-option>
+            <mat-option value="business">Business</mat-option>
+            <mat-option value="day-trip">Day-Trip</mat-option>
+            <mat-option value="landscape">Landscape</mat-option>
+            <mat-option value="shopping">Shopping</mat-option>
+            <mat-option value="family-activities">Family-Activities</mat-option>
+            <mat-option value="couple-friendly">Couple-Friendly</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input [(ngModel)]="when" name="when" matInput [matDatepicker]="picker" placeholder="When are you going?">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button class="full-width" mat-raised-button color="primary" (click)="search()">
+          Search
+          <small><i>for travel guides</i></small>
+        </button>
+
+
+      </mat-card>
+
+    </div>
+  </div>
+
+
+  <mat-card>
+    <p *ngIf="destination">
+      I'm searching for travel guides around <b>{{destination}}</b>.
+    </p>
+    <p *ngIf="traveller">
+      My main interest is <b>{{traveller}}</b>.
+    </p>
+    <p *ngIf="when">
+      And I want to go close to <b>{{when}}</b>.
+    </p>
+  </mat-card>
+
+  <p *ngFor="let result of searchResults">
+    <guidecard [travelGuide]="result"></guidecard>
+  </p>
+
+</div>

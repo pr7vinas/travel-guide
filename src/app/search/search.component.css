@@ -1,0 +1,29 @@
+
+
+.wrapper{
+  background: url('https://serving.photos.photobox.com/92393906268457a72e84c79a1a553be576dafe7665d032308cae0e4907f87c51cba2495e.jpg');
+  background-size: cover;
+  height: 100%;
+}
+
+.search-form {
+  padding-top: 160px;
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.search-datepicker-type {
+  width: 100%;
+
+  /*padding-left: 20px;*/
+}
+
+.search-tourism-submit-btn{
+  width: 100%;
+}

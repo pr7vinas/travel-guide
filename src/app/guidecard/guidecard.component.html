@@ -1,0 +1,16 @@
+<mat-card class="travel-guide-card" *ngIf="travelGuide">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{travelGuide.title}}</mat-card-title>
+    <mat-card-subtitle>{{travelGuide.subtitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{travelGuide.img}}" alt="Photo of {{travelGuide.title}}">
+  <mat-card-content>
+    <p>
+      {{travelGuide.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions *ngIf="!hideSeeMore">
+    <a mat-button routerLink="/guide/{{travelGuide.id}}">SEE MORE</a>
+  </mat-card-actions>
+</mat-card>
